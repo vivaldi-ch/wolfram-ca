@@ -1,0 +1,25 @@
+.row {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.cell {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 8px;
+  height: 15px;
+  width: 15px;
+  border-bottom: none;
+}
+
+.one {
+  background: black;
+}
