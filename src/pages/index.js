@@ -7,7 +7,7 @@ import WolframCA from '../components/wolfram-ca';
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" keywords={['gatsby', 'application', 'react']} />
-    <WolframCA />
+    <WolframCA value="75" />
   </Layout>
 );
 

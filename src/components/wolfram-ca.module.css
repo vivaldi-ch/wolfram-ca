@@ -1,12 +1,27 @@
+.wolframWrapper {
+  overflow-y: hidden;
+  max-height: 500px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.table {
+  animation: scroll-up 60s infinite linear;
+  animation-delay: 3s;
+  transform: translateY(500px);
+}
+
+@keyframes scroll-up {
+  0% {
+    transform: translateY(500px);
+  }
+  100% {
+    transform: translateY(calc(500px - 100%));
+  }
+}
+
 .row {
   display: flex;
   flex-direction: row;
-  flex: 1;
-}
-
-.column {
-  display: flex;
-  flex-direction: column;
   flex: 1;
 }
 
