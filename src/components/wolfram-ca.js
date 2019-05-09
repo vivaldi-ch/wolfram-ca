@@ -20,8 +20,6 @@ const decimalToBinary = (decimal) => {
     binArray[i] = (decimal >> i) & 1;
   }
 
-  console.log(binArray);
-
   return binArray;
 };
 
@@ -48,18 +46,12 @@ const getWolframCAArray = (decimal) => {
   const firstArr = getFirstArray();
   let currentArr = firstArr;
 
-  console.log(currentArr);
-
   const wolframArr = [firstArr];
   const patternArray = decimalToBinary(decimal);
 
   for (let i = 1; i < HEIGHT_OF_CA; i += 1) {
     wolframArr[i] = getNextArray(currentArr, patternArray);
     currentArr = wolframArr[i];
-
-    if (i === 1) {
-      console.log(currentArr);
-    }
   }
 
   return wolframArr;
@@ -68,17 +60,22 @@ const getWolframCAArray = (decimal) => {
 const WolframCA = ({ value }) => (
   <FullscreenLayout>
     <div className={styles.wolframWrapper}>
-      <div className={styles.table}>
-        {
-          getWolframCAArray(value).map(
-            object => (
-              <div className={styles.row}>
-                {object.map(o => <div className={`${styles.cell} ${(o === 1 ? styles.one : '')}`} />)}
-              </div>
-            ),
-          )
-        }
-      </div>
+      { value > 0 && value < 256
+        ? (
+          <div className={styles.table}>
+            {
+              getWolframCAArray(value).map(
+                object => (
+                  <div className={styles.row}>
+                    {object.map(o => <div className={`${styles.cell} ${(o === 1 ? styles.one : '')}`} />)}
+                  </div>
+                ),
+              )
+            }
+          </div>
+        )
+        : <h4 className={styles.notFound}>Invalid number.</h4>
+      }
     </div>
   </FullscreenLayout>
 );
