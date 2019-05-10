@@ -1,4 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
 import './layout.css';
 
 const FullscreenLayout = ({ children }) => (
@@ -12,5 +14,9 @@ const FullscreenLayout = ({ children }) => (
     <main>{children}</main>
   </div>
 );
+
+FullscreenLayout.propTypes = {
+  children: PropTypes.element.isRequired,
+};
 
 export default FullscreenLayout;
