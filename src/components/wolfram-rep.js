@@ -1,13 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import _ from 'lodash';
+import isNumber from 'lodash/isNumber';
 
 import styles from './wolfram-rep.module.css';
 
 const decimalToBinary = (decimal) => {
   const binArray = [];
 
-  if (!_.isNumber(decimal)) {
+  if (!isNumber(decimal)) {
     return [];
   }
 

@@ -1,8 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import random from 'lodash/random';
 
 import { Link } from 'gatsby';
 import Layout from '../components/layout';
+import SEO from '../components/seo';
 import WolframCA from '../components/wolfram-ca';
 
 const WolframTemplate = ({ pageContext }) => {
@@ -10,6 +12,7 @@ const WolframTemplate = ({ pageContext }) => {
 
   return (
     <Layout>
+      <SEO title={`Wolfram ${wolframIndex}`} />
       <div
         style={{
           textAlign: 'center',
@@ -28,9 +31,9 @@ const WolframTemplate = ({ pageContext }) => {
           style={{
             margin: '0 10px',
           }}
-          to="/"
+          to={`/wolfram/${random(1, 255)}`}
         >
-          <button type="button">Back</button>
+          <button type="button">Random</button>
         </Link>
         <Link
           to={wolframIndex >= 255 ? '/' : `/wolfram/${wolframIndex + 1}`}

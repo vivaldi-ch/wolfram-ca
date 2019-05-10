@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import _ from 'lodash';
+import isNumber from 'lodash/isNumber';
 
 import FullscreenLayout from './fullscreen-layout';
 import WolframRep from './wolfram-rep';
@@ -13,7 +13,7 @@ const HEIGHT_OF_CA = 500;
 const decimalToBinary = (decimal) => {
   const binArray = [];
 
-  if (!_.isNumber(decimal) || decimal < 0 || decimal > 255) {
+  if (!isNumber(decimal) || decimal < 0 || decimal > 255) {
     return null;
   }
 
