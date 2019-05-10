@@ -4,6 +4,7 @@ module.exports = {
     description: 'Graphical representation of Wolfram\'s simple cellular automaton.',
     author: 'Ibel',
   },
+  pathPrefix: '/wolfram-ca',
   plugins: [
     'gatsby-plugin-react-helmet',
     {
