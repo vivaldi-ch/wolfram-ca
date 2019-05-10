@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Fullscreen Layout renders correctly 1`] = `
+<div
+  style={
+    Object {
+      "margin": "0 auto",
+      "maxWidth": 960,
+      "padding": "2em 2em 2em",
+    }
+  }
+>
+  <main>
+    <h1>
+      This is a test
+    </h1>
+  </main>
+</div>
+`;

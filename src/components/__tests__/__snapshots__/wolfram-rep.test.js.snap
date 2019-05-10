@@ -1,0 +1,191 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header renders correctly 1`] = `
+<div
+  style={
+    Object {
+      "display": "flex",
+      "flexDirection": "row",
+      "justifyContent": "space-between",
+      "marginBottom": "1em",
+    }
+  }
+>
+  <div>
+    <div
+      className="squareRowWrapper"
+    >
+      <div
+        className="square white"
+      />
+      <div
+        className="square white"
+      />
+      <div
+        className="square white"
+      />
+    </div>
+    <div
+      className="squareRowWrapper"
+    >
+      <div
+        className="square white"
+      />
+    </div>
+  </div>
+  <div>
+    <div
+      className="squareRowWrapper"
+    >
+      <div
+        className="square white"
+      />
+      <div
+        className="square white"
+      />
+      <div
+        className="square black"
+      />
+    </div>
+    <div
+      className="squareRowWrapper"
+    >
+      <div
+        className="square black"
+      />
+    </div>
+  </div>
+  <div>
+    <div
+      className="squareRowWrapper"
+    >
+      <div
+        className="square white"
+      />
+      <div
+        className="square black"
+      />
+      <div
+        className="square white"
+      />
+    </div>
+    <div
+      className="squareRowWrapper"
+    >
+      <div
+        className="square white"
+      />
+    </div>
+  </div>
+  <div>
+    <div
+      className="squareRowWrapper"
+    >
+      <div
+        className="square white"
+      />
+      <div
+        className="square black"
+      />
+      <div
+        className="square black"
+      />
+    </div>
+    <div
+      className="squareRowWrapper"
+    >
+      <div
+        className="square black"
+      />
+    </div>
+  </div>
+  <div>
+    <div
+      className="squareRowWrapper"
+    >
+      <div
+        className="square black"
+      />
+      <div
+        className="square white"
+      />
+      <div
+        className="square white"
+      />
+    </div>
+    <div
+      className="squareRowWrapper"
+    >
+      <div
+        className="square white"
+      />
+    </div>
+  </div>
+  <div>
+    <div
+      className="squareRowWrapper"
+    >
+      <div
+        className="square black"
+      />
+      <div
+        className="square white"
+      />
+      <div
+        className="square black"
+      />
+    </div>
+    <div
+      className="squareRowWrapper"
+    >
+      <div
+        className="square black"
+      />
+    </div>
+  </div>
+  <div>
+    <div
+      className="squareRowWrapper"
+    >
+      <div
+        className="square black"
+      />
+      <div
+        className="square black"
+      />
+      <div
+        className="square white"
+      />
+    </div>
+    <div
+      className="squareRowWrapper"
+    >
+      <div
+        className="square white"
+      />
+    </div>
+  </div>
+  <div>
+    <div
+      className="squareRowWrapper"
+    >
+      <div
+        className="square black"
+      />
+      <div
+        className="square black"
+      />
+      <div
+        className="square black"
+      />
+    </div>
+    <div
+      className="squareRowWrapper"
+    >
+      <div
+        className="square black"
+      />
+    </div>
+  </div>
+</div>
+`;
