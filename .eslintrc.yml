@@ -1,6 +1,7 @@
 env:
   browser: true
   es6: true
+  jest: true
 extends: airbnb
 globals:
   Atomics: readonly
@@ -18,4 +19,5 @@ rules: {
   'react/jsx-filename-extension': 0,
   'react/jsx-one-expression-per-line': 0,
   'react/react-in-jsx-scope': 1,
+  'import/no-extraneous-dependencies': [error, { devDependencies: true }]
 }
