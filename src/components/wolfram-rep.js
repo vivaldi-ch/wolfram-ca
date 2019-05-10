@@ -1,23 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import isNumber from 'lodash/isNumber';
+
+import { decimalToBinary } from '../../utils/wolfram';
 
 import styles from './wolfram-rep.module.css';
-
-const decimalToBinary = (decimal) => {
-  const binArray = [];
-
-  if (!isNumber(decimal)) {
-    return [];
-  }
-
-  for (let i = 0; i < 3; i += 1) {
-    // eslint-disable-next-line no-bitwise
-    binArray[i] = (decimal >> i) & 1; // reverse
-  }
-
-  return binArray.reverse();
-};
 
 const WolframRep = ({ wolframArr }) => (
   <div
@@ -30,7 +16,7 @@ const WolframRep = ({ wolframArr }) => (
   >
     {
       wolframArr.map((val, index) => {
-        const valInArray = decimalToBinary(index);
+        const valInArray = decimalToBinary(index, 3).reverse();
 
         return (
           <div>
