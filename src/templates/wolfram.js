@@ -16,8 +16,29 @@ const WolframTemplate = ({ pageContext }) => {
           paddingTop: '20px',
         }}
       >
-        <Link to="/">
+        <Link
+          to={wolframIndex <= 0 ? '/' : `/wolfram/${wolframIndex - 1}`}
+          style={{
+            visibility: wolframIndex <= 0 ? 'hidden' : 'visible',
+          }}
+        >
+          <button type="button">&lt;</button>
+        </Link>
+        <Link
+          style={{
+            margin: '0 10px',
+          }}
+          to="/"
+        >
           <button type="button">Back</button>
+        </Link>
+        <Link
+          to={wolframIndex >= 255 ? '/' : `/wolfram/${wolframIndex + 1}`}
+          style={{
+            visibility: wolframIndex >= 255 ? 'hidden' : 'visible',
+          }}
+        >
+          <button type="button">&gt;</button>
         </Link>
       </div>
       <WolframCA value={wolframIndex} />
