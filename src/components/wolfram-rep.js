@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import uuid from 'uuid/v1';
 
 import { decimalToBinary } from '../../utils/wolfram';
 
@@ -16,15 +17,21 @@ const WolframRep = ({ wolframArr }) => (
   >
     {
       wolframArr.map((val, index) => {
-        const valInArray = decimalToBinary(index, 3).reverse();
+        const valInArray = decimalToBinary(index, 3).map(binaryVal => ({
+          id: uuid(),
+          binaryVal,
+        }));
 
         return (
-          <div>
+          // static array
+          // eslint-disable-next-line react/no-array-index-key
+          <div key={index}>
             <div className={styles.squareRowWrapper}>
               {valInArray.map(v => (
                 <div
+                  key={v.id}
                   className={`${styles.square} ${
-                    v === 0 ? styles.white : styles.black
+                    v.binaryVal === 0 ? styles.white : styles.black
                   }`}
                 />
               ))}

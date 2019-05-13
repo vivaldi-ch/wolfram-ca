@@ -21,7 +21,7 @@ const WolframCA = ({ value }) => {
     <FullscreenLayout>
       <h3>Index: {value}</h3>
       <div>
-        <WolframRep wolframArr={decimalToBinary(value)} />
+        <WolframRep wolframArr={decimalToBinary(value).reverse()} />
       </div>
       <div
         className={styles.wolframWrapper}

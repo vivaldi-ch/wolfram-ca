@@ -1,9 +1,9 @@
-import isNumber from 'lodash/isNumber';
+import isFinite from 'lodash/isFinite';
 
 export const decimalToBinary = (decimal, limit = 8) => {
   const binArray = [];
 
-  if (!isNumber(decimal) || decimal < 0 || decimal > 255) {
+  if (!isFinite(decimal) || decimal < 0 || decimal > 255) {
     return null;
   }
 
@@ -12,7 +12,8 @@ export const decimalToBinary = (decimal, limit = 8) => {
     binArray[i] = (decimal >> i) & 1;
   }
 
-  return binArray;
+  // since the bit is obtained in reverse
+  return binArray.reverse();
 };
 
 export const getFirstArray = (width) => {
@@ -29,9 +30,9 @@ export const getFirstArray = (width) => {
 export const getNextArray = (curr, patternArray) => curr.map((c, index) => {
   const firstVal = index === 0 ? 0 : curr[index - 1] * 4;
   const secondVal = c * 2;
-  const thirdVal = index === (curr.length - 1) ? 0 : curr[index + 1] * 1;
+  const thirdVal = index === curr.length - 1 ? 0 : curr[index + 1] * 1;
 
-  return patternArray[(firstVal + secondVal + thirdVal)];
+  return patternArray[firstVal + secondVal + thirdVal];
 });
 
 export const getWolframCAArray = (decimal, width, height) => {
@@ -39,7 +40,7 @@ export const getWolframCAArray = (decimal, width, height) => {
   let currentArr = firstArr;
 
   const wolframArr = [firstArr];
-  const patternArray = decimalToBinary(decimal);
+  const patternArray = decimalToBinary(decimal).reverse();
 
   for (let i = 1; i < height; i += 1) {
     wolframArr[i] = getNextArray(currentArr, patternArray);
