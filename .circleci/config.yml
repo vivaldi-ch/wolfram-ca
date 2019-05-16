@@ -1,39 +1,69 @@
+defaults: &defaults
+  docker:
+    - image: circleci/node:10
+
 version: 2
 
 jobs:
-  test:
-    docker:
-      - image: circleci/node:10.15.3
+  pre-build:
+    working_directory: ~/project
+    <<: *defaults
     steps:
-      - checkout
+      - checkout:
+          path: ~/project/
+      - attach_workspace:
+          at: ~/project/
+
+      - restore_cache:
+          key: node-v2-{{ checksum "package.json" }}-{{ arch }}
+
       - run:
           name: Install dependencies
           command: npm i
+
+      - save_cache:
+          key: node-v2-{{ checksum "package.json" }}-{{ arch }}
+          paths:
+            - node_modules
+
+      - persist_to_workspace:
+          root: ~/project
+          paths:
+            - node_modules
+
+  lint:
+    working_directory: ~/project
+    <<: *defaults
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ~/project/
+      - run:
+          name: Lint
+          command: npm run lint
+
+  test:
+    working_directory: ~/project
+    <<: *defaults
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ~/project/
       - run:
           name: Test
           command: npm run test
 
-  build:
-    docker:
-      - image: circleci/node:10.15.3
-    steps:
-      - checkout
-      - run:
-          name: Install dependencies
-          command: npm i
-      - run:
-          name: Build docs
-          command: npm run build
-
   deploy:
-    docker:
-      - image: circleci/node:10.15.3
+    working_directory: ~/project
+    <<: *defaults
     steps:
-      - checkout
+      - checkout:
+          path: ~/project/
+      - attach_workspace:
+          at: ~/project/
       - run:
-          name: Install and configure dependencies
+          name: Set git config
           command: |
-            npm i
             git config user.email "ci-build@vivaldi.ch"
             git config user.name "ci-build"
       - run:
@@ -44,7 +74,16 @@ workflows:
   version: 2
   build-deploy:
     jobs:
+      - pre-build:
+          filters:
+            branches:
+              only: master
+      - lint:
+          requires:
+            - pre-build
       - test
+          requires:
+            - lint
       - deploy:
           requires:
             - test
