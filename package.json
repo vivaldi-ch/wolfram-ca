@@ -44,7 +44,8 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "test": "jest",
-    "deploy": "node_modules/.bin/gatsby build --prefix-paths && gh-pages -d public"
+    "lint": "eslint --ignore-path .gitignore .",
+    "deploy": "rm -rf .cache/ public/ && node_modules/.bin/gatsby build --prefix-paths && gh-pages -d public"
   },
   "repository": {
     "type": "git",
