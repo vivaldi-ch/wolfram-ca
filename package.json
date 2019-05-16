@@ -38,13 +38,13 @@
   ],
   "license": "MIT",
   "scripts": {
-    "build": "gatsby build",
-    "develop": "gatsby develop",
+    "build": "node_modules/.bin/gatsby build",
+    "develop": "node_modules/.bin/gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "test": "jest",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public"
+    "deploy": "node_modules/.bin/gatsby build --prefix-paths && gh-pages -d public"
   },
   "repository": {
     "type": "git",
