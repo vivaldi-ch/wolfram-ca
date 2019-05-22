@@ -8,30 +8,30 @@ import './fade-transition-router.css';
 const FadeTransitionRouter = props => (
   <Location>
     {({ location }) => (
-      <TransitionGroup className="transition-group">
-        {props.animated ? (
+      props.isAnimated ? (
+        <TransitionGroup className="transition-group">
           <CSSTransition key={location.key} classNames="fade" timeout={500}>
             <Router location={location} className="router">
               {props.children}
             </Router>
           </CSSTransition>
-        ) : (
-          <Router location={location} className="router">
-            {props.children}
-          </Router>
-        )}
-      </TransitionGroup>
+        </TransitionGroup>
+      ) : (
+        <Router location={location} className="router">
+          {props.children}
+        </Router>
+      )
     )}
   </Location>
 );
 
 FadeTransitionRouter.defaultProps = {
-  animated: true,
+  isAnimated: true,
 };
 
 FadeTransitionRouter.propTypes = {
   children: PropTypes.element.isRequired,
-  animated: PropTypes.bool,
+  isAnimated: PropTypes.bool,
 };
 
 export default FadeTransitionRouter;

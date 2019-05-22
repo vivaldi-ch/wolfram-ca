@@ -30,7 +30,7 @@ class WolframPage extends React.Component {
     return (
       <Layout>
         <SEO title={`Wolfram ${wolframIndex}`} />
-        <FadeTransitionRouter animated={false}>
+        <FadeTransitionRouter isAnimated={false}>
           <WolframLink path="wolfram/:value" />
         </FadeTransitionRouter>
         <FadeTransitionRouter>
