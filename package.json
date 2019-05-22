@@ -6,7 +6,7 @@
   "author": "Vivaldi Ibelio Chandra <vivaldi.ch@gmail.com>",
   "dependencies": {
     "@reach/router": "^1.2.1",
-    "gatsby": "^2.3.33",
+    "gatsby": "^2.6.0",
     "gatsby-image": "^2.0.40",
     "gatsby-plugin-create-client-paths": "^2.0.5",
     "gatsby-plugin-lodash": "^3.0.5",
@@ -21,6 +21,7 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.0",
+    "react-loadable": "^5.5.0",
     "react-transition-group": "^4.0.1",
     "uuid": "^3.3.2"
   },
