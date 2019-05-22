@@ -12,7 +12,6 @@ import './layout.css';
 const LazyWolframArray = Loadable({
   loader: () => import('./wolfram-array'),
   loading: () => <div />,
-  delay: 0,
 });
 
 const WIDTH_OF_CA = 51;
