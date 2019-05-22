@@ -11,13 +11,13 @@ const FadeTransitionRouter = props => (
       props.isAnimated ? (
         <TransitionGroup className="transition-group">
           <CSSTransition key={location.key} classNames="fade" timeout={500}>
-            <Router location={location} className="router">
+            <Router location={location}>
               {props.children}
             </Router>
           </CSSTransition>
         </TransitionGroup>
       ) : (
-        <Router location={location} className="router">
+        <Router location={location}>
           {props.children}
         </Router>
       )
