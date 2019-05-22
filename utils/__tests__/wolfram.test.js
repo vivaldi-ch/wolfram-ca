@@ -14,12 +14,12 @@ describe('Wolfram Util', () => {
   });
 
   it('should not convert decimal to 8 digit binary if it is not a number', () => {
-    expect(decimalToBinary(NaN)).toEqual(null);
+    expect(decimalToBinary(NaN)).toEqual([]);
   });
 
   it('should not convert decimal to 8 digit binary if it is less than 0 or more than 255', () => {
-    expect(decimalToBinary(-1)).toEqual(null);
-    expect(decimalToBinary(256)).toEqual(null);
+    expect(decimalToBinary(-1)).toEqual([]);
+    expect(decimalToBinary(256)).toEqual([]);
   });
 
   it('should have the middle index as 1 when generating the first array', () => {

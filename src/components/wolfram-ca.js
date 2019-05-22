@@ -15,13 +15,14 @@ const WIDTH_OF_CA = 51;
 const HEIGHT_OF_CA = 500;
 
 const WolframCA = ({ value }) => {
-  const isNumberValid = value > 0 && value < 256;
+  const wolframValue = Number(value) || 0;
+  const isNumberValid = wolframValue > 0 && wolframValue < 256;
 
   return (
     <FullscreenLayout>
-      <h3>Index: {value}</h3>
+      <h3>Index: {wolframValue}</h3>
       <div>
-        <WolframRep wolframArr={decimalToBinary(value).reverse()} />
+        <WolframRep wolframArr={decimalToBinary(wolframValue).reverse()} />
       </div>
       <div
         className={styles.wolframWrapper}
@@ -33,7 +34,7 @@ const WolframCA = ({ value }) => {
           ? (
             <div className={styles.table}>
               {
-                getWolframCAArray(value, WIDTH_OF_CA, HEIGHT_OF_CA).map(
+                getWolframCAArray(wolframValue, WIDTH_OF_CA, HEIGHT_OF_CA).map(
                   object => (
                     <div className={styles.row}>
                       {object.map(o => <div className={`${styles.cell} ${(o === 1 ? styles.one : '')}`} />)}

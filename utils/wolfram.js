@@ -4,7 +4,7 @@ export const decimalToBinary = (decimal, limit = 8) => {
   const binArray = [];
 
   if (!isFinite(decimal) || decimal < 0 || decimal > 255) {
-    return null;
+    return [];
   }
 
   for (let i = 0; i < limit; i += 1) {
