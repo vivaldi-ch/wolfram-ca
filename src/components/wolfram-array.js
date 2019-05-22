@@ -10,10 +10,15 @@ const WolframArray = ({ value, width, height }) => {
 
   return isNumberValid ? (
     <div className={styles.table}>
-      {getWolframCAArray(value, width, height).map(object => (
-        <div className={styles.row}>
-          {object.map(o => (
-            <div className={`${styles.cell} ${o === 1 ? styles.one : ''}`} />
+      {getWolframCAArray(value, width, height).map((object, index) => (
+        // eslint-disable-next-line react/no-array-index-key
+        <div className={styles.row} key={index}>
+          {object.map((o, objectIndex) => (
+            <div
+              className={`${styles.cell} ${o === 1 ? styles.one : ''}`}
+              // eslint-disable-next-line react/no-array-index-key
+              key={`${index}-${objectIndex}`}
+            />
           ))}
         </div>
       ))}
