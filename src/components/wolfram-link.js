@@ -5,7 +5,7 @@ import { Link } from '@reach/router';
 import random from 'lodash/random';
 
 const WolframLink = ({ value }) => {
-  const wolframIndex = Number(value) || 0;
+  const wolframIndex = Number(value);
 
   return (
     <div
@@ -15,7 +15,7 @@ const WolframLink = ({ value }) => {
       }}
     >
       <Link
-        to={wolframIndex <= 0 ? '/' : `/wolfram/${wolframIndex - 1}`}
+        to={wolframIndex <= 0 ? '/' : `/wolfram/${Math.min(wolframIndex - 1, 255)}`}
         style={{
           visibility: wolframIndex <= 0 ? 'hidden' : 'visible',
         }}
@@ -31,7 +31,7 @@ const WolframLink = ({ value }) => {
         <button type="button">Random</button>
       </Link>
       <Link
-        to={wolframIndex >= 255 ? '/' : `/wolfram/${wolframIndex + 1}`}
+        to={wolframIndex >= 255 ? '/' : `/wolfram/${Math.max(wolframIndex + 1, 1)}`}
         style={{
           visibility: wolframIndex >= 255 ? 'hidden' : 'visible',
         }}
@@ -42,8 +42,12 @@ const WolframLink = ({ value }) => {
   );
 };
 
+WolframLink.defaultProps = {
+  value: '0',
+};
+
 WolframLink.propTypes = {
-  value: PropTypes.string.isRequired,
+  value: PropTypes.string,
 };
 
 export default WolframLink;
