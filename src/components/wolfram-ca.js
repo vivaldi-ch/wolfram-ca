@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { lazy, Suspense } from 'react';
 import PropTypes from 'prop-types';
-import Loadable from 'react-loadable';
 
 import FullscreenLayout from './fullscreen-layout';
 import WolframRep from './wolfram-rep';
@@ -9,10 +8,7 @@ import { decimalToBinary } from '../../utils/wolfram';
 import styles from './wolfram-ca.module.css';
 import './layout.css';
 
-const LazyWolframArray = Loadable({
-  loader: () => import('./wolfram-array'),
-  loading: () => <div />,
-});
+const LazyWolframArray = lazy(() => import('./wolfram-array'));
 
 const WIDTH_OF_CA = 51;
 const HEIGHT_OF_CA = 500;
@@ -34,7 +30,9 @@ const WolframCA = ({ value }) => {
             display: isNumberValid ? 'block' : 'flex',
           }}
         >
-          <LazyWolframArray value={wolframValue} width={WIDTH_OF_CA} height={HEIGHT_OF_CA} />
+          <Suspense fallback={<div />}>
+            <LazyWolframArray value={wolframValue} width={WIDTH_OF_CA} height={HEIGHT_OF_CA} />
+          </Suspense>
         </div>
       </div>
     </FullscreenLayout>
