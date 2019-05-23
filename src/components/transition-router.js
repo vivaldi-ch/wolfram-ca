@@ -3,9 +3,9 @@ import PropTypes from 'prop-types';
 import { Router, Location } from '@reach/router';
 import { TransitionGroup, CSSTransition } from 'react-transition-group';
 
-import './fade-transition-router.css';
+import './transition-router.css';
 
-const FadeTransitionRouter = props => (
+const TransitionRouter = props => (
   <Location>
     {({ location }) => (
       props.isAnimated ? (
@@ -25,13 +25,13 @@ const FadeTransitionRouter = props => (
   </Location>
 );
 
-FadeTransitionRouter.defaultProps = {
+TransitionRouter.defaultProps = {
   isAnimated: true,
 };
 
-FadeTransitionRouter.propTypes = {
+TransitionRouter.propTypes = {
   children: PropTypes.element.isRequired,
   isAnimated: PropTypes.bool,
 };
 
-export default FadeTransitionRouter;
+export default TransitionRouter;

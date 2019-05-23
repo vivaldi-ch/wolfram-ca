@@ -8,7 +8,7 @@ import Layout from '../../components/layout';
 import SEO from '../../components/seo';
 import WolframCA from '../../components/wolfram-ca';
 import WolframLink from '../../components/wolfram-link';
-import FadeTransitionRouter from '../../components/fade-transition-router';
+import TransitionRouter from '../../components/transition-router';
 
 class WolframPage extends React.Component {
   constructor(props) {
@@ -30,12 +30,12 @@ class WolframPage extends React.Component {
     return (
       <Layout>
         <SEO title={`Wolfram ${wolframIndex}`} />
-        <FadeTransitionRouter isAnimated={false}>
+        <TransitionRouter isAnimated={false}>
           <WolframLink path="wolfram/:value" />
-        </FadeTransitionRouter>
-        <FadeTransitionRouter>
+        </TransitionRouter>
+        <TransitionRouter>
           <WolframCA path="wolfram/:value" />
-        </FadeTransitionRouter>
+        </TransitionRouter>
       </Layout>
     );
   }
