@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { Redirect } from '@reach/router';
 
 import last from 'lodash/last';
 import toNumber from 'lodash/toNumber';
@@ -34,6 +35,7 @@ class WolframPage extends React.Component {
           <WolframLink path="wolfram/:value" />
         </TransitionRouter>
         <TransitionRouter>
+          <Redirect exact from="wolfram/" to="/" />
           <WolframCA path="wolfram/:value" />
         </TransitionRouter>
       </Layout>
