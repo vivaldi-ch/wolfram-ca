@@ -2,7 +2,7 @@
   overflow-y: hidden;
   max-height: 500px;
   min-height: 500px;
-  min-width: 700px;
+  min-width: 765px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
@@ -16,6 +16,8 @@
   animation: scroll-up 60s infinite linear;
   animation-delay: 1s;
   transform: translateY(500px);
+  width: 765px;
+  height: 7500px;
 }
 
 @keyframes scroll-up {
@@ -34,13 +36,9 @@
 }
 
 .cell {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 8px;
+  display: block;
   height: 15px;
   width: 15px;
-  border-bottom: none;
 }
 
 .one {

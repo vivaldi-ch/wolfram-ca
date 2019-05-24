@@ -5,8 +5,10 @@
   "version": "0.1.0",
   "author": "Vivaldi Ibelio Chandra <vivaldi.ch@gmail.com>",
   "dependencies": {
-    "gatsby": "^2.3.33",
+    "@reach/router": "^1.2.1",
+    "gatsby": "^2.6.0",
     "gatsby-image": "^2.0.40",
+    "gatsby-plugin-create-client-paths": "^2.0.5",
     "gatsby-plugin-lodash": "^3.0.5",
     "gatsby-plugin-manifest": "^2.0.29",
     "gatsby-plugin-offline": "^2.0.25",
@@ -19,9 +21,12 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.0",
+    "react-loadable": "^5.5.0",
+    "react-transition-group": "^4.0.1",
     "uuid": "^3.3.2"
   },
   "devDependencies": {
+    "babel-eslint": "^10.0.1",
     "babel-jest": "^24.8.0",
     "babel-preset-gatsby": "^0.1.11",
     "eslint": "^5.16.0",
@@ -45,7 +50,7 @@
     "serve": "gatsby serve",
     "test": "jest",
     "lint": "eslint --ignore-path .gitignore .",
-    "deploy": "rm -rf .cache/ public/ && node_modules/.bin/gatsby build --prefix-paths && gh-pages -d public"
+    "deploy": "node_modules/.bin/gatsby build --prefix-paths && gh-pages -d public"
   },
   "repository": {
     "type": "git",

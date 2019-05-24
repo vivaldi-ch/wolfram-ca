@@ -8,7 +8,7 @@ class IndexPage extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = { index: null };
+    this.state = { index: '' };
     this.handleInputChange = this.handleInputChange.bind(this);
   }
 
@@ -27,18 +27,28 @@ class IndexPage extends React.Component {
     return (
       <Layout>
         <SEO title="Home" keywords={['gatsby', 'application', 'react']} />
-        <form
+        <p
           style={{
-            marginTop: '4em',
+            marginTop: '1em',
+            textAlign: 'center',
           }}
         >
-          <input
-            type="number"
-            name="index"
-            value={index}
-            onChange={this.handleInputChange}
-          />
-          <Link to={`wolfram/${index}`}><button type="submit">Submit</button></Link>
+          Enter a number from 1 to 255. This will generate a pattern based on Wolfram&lsquo;s &nbsp;
+          <a href="https://en.wikipedia.org/wiki/Elementary_cellular_automaton">
+            Elementary Cellular Automation
+          </a>
+          .
+        </p>
+        <form
+          style={{
+            marginTop: '3em',
+            textAlign: 'center',
+          }}
+        >
+          <input type="number" name="index" value={index} onChange={this.handleInputChange} />
+          <Link to={index ? `/wolfram/${index}` : '/'}>
+            <button type="submit">Submit</button>
+          </Link>
         </form>
       </Layout>
     );

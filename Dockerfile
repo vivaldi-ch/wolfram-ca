@@ -4,12 +4,12 @@
 # TODO: Can we do this all on Alpine for a smaller image?
 FROM node:10
 
-WORKDIR /usr/src/app
-COPY package*.json ./
+ADD package*.json /app/
+WORKDIR /app
 
 RUN npm i
 
-COPY . .
+ADD . /app
 
 EXPOSE 8000
-CMD [ "npm", "run", "deploy" ]
+CMD [ "npm", "run", "build" ]
