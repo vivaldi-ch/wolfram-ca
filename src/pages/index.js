@@ -35,7 +35,7 @@ class IndexPage extends React.Component {
         >
           Enter a number from 1 to 255. This will generate a pattern based on Wolfram&lsquo;s &nbsp;
           <a href="https://en.wikipedia.org/wiki/Elementary_cellular_automaton">
-            Elementary Cellular Automation
+            Elementary Cellular Automaton
           </a>
           .
         </p>
