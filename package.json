@@ -50,7 +50,7 @@
     "serve": "gatsby serve",
     "test": "jest",
     "lint": "eslint --ignore-path .gitignore .",
-    "deploy": "node_modules/.bin/gatsby build --prefix-paths && gh-pages -d public"
+    "deploy": "node_modules/.bin/gatsby build --prefix-paths && gh-pages --message \"[skip ci] Updates\" -d public"
   },
   "repository": {
     "type": "git",
