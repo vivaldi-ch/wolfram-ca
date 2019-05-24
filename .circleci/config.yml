@@ -61,6 +61,9 @@ jobs:
           path: ~/project/
       - attach_workspace:
           at: ~/project/
+      - add_ssh_keys:
+          fingerprints:
+            - "f9:68:22:93:9b:80:28:8a:d7:5b:cd:22:28:71:4f:c1"
       - run:
           name: Set git config
           command: |
