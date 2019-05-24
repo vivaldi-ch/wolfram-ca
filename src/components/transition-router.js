@@ -11,13 +11,13 @@ const TransitionRouter = props => (
       props.isAnimated ? (
         <TransitionGroup className="transition-group">
           <CSSTransition key={location.key} classNames="fade" timeout={500}>
-            <Router location={location}>
+            <Router location={location} primary={props.isPrimary}>
               {props.children}
             </Router>
           </CSSTransition>
         </TransitionGroup>
       ) : (
-        <Router location={location}>
+        <Router location={location} primary={props.isPrimary}>
           {props.children}
         </Router>
       )
@@ -27,6 +27,7 @@ const TransitionRouter = props => (
 
 TransitionRouter.defaultProps = {
   isAnimated: true,
+  isPrimary: false,
 };
 
 TransitionRouter.propTypes = {
@@ -35,6 +36,7 @@ TransitionRouter.propTypes = {
     PropTypes.arrayOf(PropTypes.element),
   ]).isRequired,
   isAnimated: PropTypes.bool,
+  isPrimary: PropTypes.bool,
 };
 
 export default TransitionRouter;
