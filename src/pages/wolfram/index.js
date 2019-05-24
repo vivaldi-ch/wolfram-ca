@@ -32,11 +32,11 @@ class WolframPage extends React.Component {
       <Layout>
         <SEO title={`Wolfram ${wolframIndex}`} />
         <TransitionRouter isAnimated={false}>
-          <WolframLink path="wolfram/:value" />
+          <WolframLink path="/wolfram/:value" />
         </TransitionRouter>
         <TransitionRouter>
-          <Redirect exact from="wolfram/" to="/" />
-          <WolframCA path="wolfram/:value" />
+          <Redirect exact from="/wolfram/" to="/" />
+          <WolframCA path="/wolfram/:value" />
         </TransitionRouter>
       </Layout>
     );
