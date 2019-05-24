@@ -34,7 +34,7 @@ class WolframPage extends React.Component {
         <TransitionRouter isAnimated={false}>
           <WolframLink path="/wolfram/:value" />
         </TransitionRouter>
-        <TransitionRouter>
+        <TransitionRouter isPrimary>
           <Redirect exact from="/wolfram/" to="/" />
           <WolframCA path="/wolfram/:value" />
         </TransitionRouter>
