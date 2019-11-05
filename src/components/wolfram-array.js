@@ -42,6 +42,7 @@ class WolframArray extends React.Component {
 
   render() {
     const { isNumberValid } = this.state;
+    const { width, height } = this.props;
 
     const wolframHTML = isNumberValid ? (
       <div className={styles.table}>
@@ -49,8 +50,8 @@ class WolframArray extends React.Component {
           ref={(canvas) => {
             this.canvas = canvas;
           }}
-          width={765}
-          height={7500}
+          width={width * CELL_SIDE}
+          height={height * CELL_SIDE}
         />
       </div>
     ) : (
