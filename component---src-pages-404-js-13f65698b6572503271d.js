@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[3],{w2l6:function(e,n,t){"use strict";t.r(n);var a=t("q1tI"),l=t.n(a),r=t("Wbzz"),u=t("D0BC"),o=t.n(u),c=t("Bl7J"),i=t("vrFN");n.default=function(){return l.a.createElement(c.a,null,l.a.createElement(i.a,{title:"404: Not found"}),l.a.createElement("br",null),l.a.createElement("p",null,"You entered an invalid number. ",l.a.createElement(r.Link,{to:"/wolfram/"+o()(1,255)},"Try")," a number between 1 and 255!"))}}}]);
+//# sourceMappingURL=component---src-pages-404-js-13f65698b6572503271d.js.map
