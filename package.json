@@ -16,7 +16,7 @@
     "gatsby-plugin-sharp": "^2.0.35",
     "gatsby-source-filesystem": "^2.0.32",
     "gatsby-transformer-sharp": "^2.1.18",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.15",
     "prop-types": "^15.7.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
@@ -44,13 +44,14 @@
   "license": "MIT",
   "scripts": {
     "build": "node_modules/.bin/gatsby build",
+    "build:cname": "echo 'wolfram-ca.ibel.io' > ./public/CNAME",
     "develop": "node_modules/.bin/gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "test": "jest",
     "lint": "eslint --ignore-path .gitignore .",
-    "deploy": "node_modules/.bin/gatsby build --prefix-paths && gh-pages --message \"[skip ci] Updates\" -d public"
+    "deploy": "node_modules/.bin/gatsby build --prefix-paths && npm run build:cname && gh-pages --message \"[skip ci] Updates\" -d public"
   },
   "repository": {
     "type": "git",
